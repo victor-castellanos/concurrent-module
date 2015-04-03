@@ -1,6 +1,6 @@
 <?php
-
 namespace Concurrent\Processes\Slave;
+
 use Concurrent\Processes\ProcessInterface;
 
 /**

@@ -7,7 +7,7 @@
  */
 abstract class ConsoleLoggerTestCase extends PHPUnit_Framework_TestCase {
     /**
-     * @var $sut \Concurrent\Commons\LoggerInterface
+     * @var $sut \Psr\Log\LoggerInterface
      */
     protected $sut;
 
@@ -26,7 +26,7 @@ class when_printing_a_message extends ConsoleLoggerTestCase {
 
     public function setUp() {
         parent::setUp();
-        $this->sut->log($this->message = 'This is my message');
+        $this->sut->debug($this->message = 'This is my message');
     }
 
     /**
@@ -85,7 +85,7 @@ class when_print_a_success_message extends ConsoleLoggerTestCase {
 
     public function setUp() {
         parent::setUp();
-        $this->sut->success($this->_message = 'This is my message');
+        $this->sut->info($this->_message = 'This is my message');
     }
 
     /**
@@ -99,7 +99,7 @@ class when_print_a_success_message extends ConsoleLoggerTestCase {
      * @test
      */
     public function it_should_return_a_S_within_the_message() {
-        $this->expectOutputRegex('#S#');
+        $this->expectOutputRegex('#I#');
 
     }
 }

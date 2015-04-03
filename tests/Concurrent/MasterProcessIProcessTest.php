@@ -16,9 +16,9 @@ abstract class MasterProcess_IProcess_TestCase extends PHPUnit_Framework_TestCas
 
     public function setUp()
     {
-        $this->_queueMock = $this->getMockBuilder('Services\MessageQueues\MessageQueueInterface')
+        $this->_queueMock = $this->getMockBuilder('Concurrent\Services\MessageQueues\MessageQueueInterface')
             ->disableOriginalConstructor()->getMock();
-        $this->_loggerMock = $this->getMockBuilder('Services\MessageLogging\LoggerInterface')
+        $this->_loggerMock = $this->getMockBuilder('Concurrent\Services\MessageLogging\LoggerInterface')
             ->disableOriginalConstructor()->getMock();
         $this->_processHandlerMock = $this->getMockBuilder('Concurrent\Commons\ProcessHandlerInterface')
             ->disableOriginalConstructor()->getMock();
@@ -60,15 +60,15 @@ class when_sending_a_message_to_another_process extends MasterProcess_IProcess_T
 abstract class MasterProcess_IMasterProcess_TestCase extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var $_sut IMasterProcess
+     * @var $_sut \Concurrent\Processes\Master\MasterProcessInterface
      */
     protected $_sut;
 
     public function setUp()
     {
-        $this->_queueMock = $this->getMockBuilder('Services\MessageQueues\MessageQueueInterface')
+        $this->_queueMock = $this->getMockBuilder('Concurrent\Services\MessageQueues\MessageQueueInterface')
             ->disableOriginalConstructor()->getMock();
-        $this->_loggerMock = $this->getMockBuilder('Services\MessageLogging\LoggerInterface')
+        $this->_loggerMock = $this->getMockBuilder('Concurrent\Services\MessageLogging\LoggerInterface')
             ->disableOriginalConstructor()->getMock();
         $this->_processHandlerMock = $this->getMockBuilder('Concurrent\Commons\ProcessHandlerInterface')
             ->disableOriginalConstructor()->getMock();
@@ -172,9 +172,9 @@ class when_executing_action_handler_and_it_is_found extends MasterProcess_IMaste
     public function setUp()
     {
         parent::setUp();
-        $this->_queueMock = $this->getMockBuilder('Services\MessageQueues\MessageQueueInterface')
+        $this->_queueMock = $this->getMockBuilder('Concurrent\Services\MessageQueues\MessageQueueInterface')
             ->disableOriginalConstructor()->getMock();
-        $this->_loggerMock = $this->getMockBuilder('Services\MessageLogging\LoggerInterface')
+        $this->_loggerMock = $this->getMockBuilder('Concurrent\Services\MessageLogging\LoggerInterface')
             ->disableOriginalConstructor()->getMock();
         $this->_processHandlerMock = $this->getMockBuilder('Concurrent\Commons\ProcessHandlerInterface')
             ->disableOriginalConstructor()->getMock();

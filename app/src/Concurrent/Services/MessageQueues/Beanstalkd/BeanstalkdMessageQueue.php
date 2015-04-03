@@ -1,18 +1,19 @@
 <?php
-namespace Services\MessageQueues\Beanstalkd;
+namespace Concurrent\Services\MessageQueues\Beanstalkd;
 
-use Services\MessageQueues\MessageQueueException;
-use Services\MessageQueues\MessageQueueInterface;
+use Pheanstalk\PheanstalkInterface;
+use Concurrent\Services\MessageQueues\MessageQueueException;
+use Concurrent\Services\MessageQueues\MessageQueueInterface;
 
 /**
  * Class BeanstalkdMessageQueue
- * @package Services\MessageQueues\Beanstalkd
+ * @package Concurrent\Services\MessageQueues\Beanstalkd
  */
 class BeanstalkdMessageQueue implements MessageQueueInterface
 {
 
     /**
-     * @var null|\Pheanstalk_PheanstalkInterface
+     * @var null|PheanstalkInterface
      */
     protected $messageQueue;
 

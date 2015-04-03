@@ -3,10 +3,12 @@ namespace Concurrent\Commons;
 
 /**
  * Class ProcessHandler
+ *
  * @package Concurrent\Commons
  * @codeCoverageIgnore
  */
-class ProcessHandler implements ProcessHandlerInterface {
+class ProcessHandler implements ProcessHandlerInterface
+{
 
     /**
      * Gets the parent process ID

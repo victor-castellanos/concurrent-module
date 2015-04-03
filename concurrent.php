@@ -1,18 +1,8 @@
 <?php
-require_once(dirname(__FILE__) . '/vendor/autoload.php');
+require_once(dirname(__FILE__) . 'app/vendor/autoload.php');
 
-/**
- * Concurrent Framework 0.0.1
- * Type 'php concurrent.php --type=[Master/Slave type] --slaves=20' to run
- * Type 'php concurrent.php --help' for help
- *
- * --type=[Master/Slave type] *Required*    prefix of your master/slave processes.
- * --slaves=[i]               *Required*    number of slaves to start.
- * --help                                   displays help text.
- * --version                                displays current version
- */
-$version = "0.0.1";
-$help = "Concurrent Framework 0.0.1
+$version = '0.2.1.0';
+$help = "Concurrent Module {$version}
  Type 'php concurrent.php --type=[Master/Slave type] --slaves=20' to run
  Type 'php concurrent.php --help' for help
  --type=[Master/Slave type] *Required*    prefix of your master/slave processes.
@@ -34,7 +24,7 @@ foreach($argv as $argument) {
         exit;
     }
     if($argument == '--version') {
-        echo "Concurrent Framework v.$version\n";
+        echo "Concurrent Module v.$version\n";
         exit;
     }
 }
@@ -67,7 +57,7 @@ while($numberOfSlaves-- > 0) {
     }
 }
 /**
- * @var $master \Concurrent\Processes\Master\IMasterProcess
+ * @var $master \Concurrent\Processes\Master\MasterProcessInterface
  */
 $master = new $masterClass;
 while(true) {

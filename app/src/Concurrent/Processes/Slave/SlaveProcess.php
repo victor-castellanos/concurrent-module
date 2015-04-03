@@ -1,13 +1,13 @@
 <?php
 namespace Concurrent\Processes\Slave;
 
-use Concurrent\Commons\LoggerInterface;
 use Concurrent\Commons\ProcessHandlerInterface;
 use Concurrent\Processes\ExpectingMessageTimeoutException;
 use Concurrent\Processes\ProcessMessage;
-use Services\MessageQueues\MessageQueueException;
-use Pheanstalk_Exception_ServerException;
-use Services\MessageQueues\MessageQueueInterface;
+use Pheanstalk\Exception;
+use Psr\Log\LoggerInterface;
+use Concurrent\Services\MessageQueues\MessageQueueException;
+use Concurrent\Services\MessageQueues\MessageQueueInterface;
 
 /**
  * Class SlaveProcess
@@ -65,7 +65,7 @@ abstract class SlaveProcess implements SlaveProcessInterface
                             }
                         }
                         if ($timeout) $timeoutOver = ((microtime(true) - $timeStart) * 1000) >= $timeout;
-                    } catch (Pheanstalk_Exception_ServerException $e) {
+                    } catch (Exception $e) {
                     }
                 }
             } catch (MessageQueueException $e) {

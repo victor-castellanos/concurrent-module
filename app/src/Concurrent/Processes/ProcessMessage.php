@@ -13,6 +13,19 @@ class ProcessMessage {
     protected $data;
 
     /**
+     * @param $processFrom
+     * @param $processTo
+     * @param $action
+     * @param $data
+     */
+    public function __construct($processFrom, $processTo, $action, $data) {
+        $this->setAction($action);
+        $this->setData($data);
+        $this->setProcessFrom($processFrom);
+        $this->setProcessTo($processTo);
+    }
+
+    /**
      * @param mixed $data
      */
     public function setData($data) {
@@ -65,20 +78,6 @@ class ProcessMessage {
      */
     public function getProcessTo() {
         return $this->processTo;
-    }
-
-
-    /**
-     * @param $processFrom
-     * @param $processTo
-     * @param $action
-     * @param $data
-     */
-    public function __construct($processFrom, $processTo, $action, $data) {
-        $this->setAction($action);
-        $this->setData($data);
-        $this->setProcessFrom($processFrom);
-        $this->setProcessTo($processTo);
     }
 
 }

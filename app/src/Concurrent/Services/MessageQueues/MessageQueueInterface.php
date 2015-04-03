@@ -1,9 +1,9 @@
 <?php
-namespace Services\MessageQueues;
+namespace Concurrent\Services\MessageQueues;
 
 /**
  * Interface MessageQueueInterface
- * @package Services\MessageQueues
+ * @package Concurrent\Services\MessageQueues
  */
 interface MessageQueueInterface {
 

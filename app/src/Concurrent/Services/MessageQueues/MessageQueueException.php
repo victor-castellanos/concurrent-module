@@ -1,11 +1,11 @@
 <?php
-namespace Services\MessageQueues;
+namespace Concurrent\Services\MessageQueues;
 
 use Exception;
 
 /**
  * Class MessageQueueException
- * @package Services\MessageQueues
+ * @package Concurrent\Services\MessageQueues
  */
 class MessageQueueException extends Exception {
 

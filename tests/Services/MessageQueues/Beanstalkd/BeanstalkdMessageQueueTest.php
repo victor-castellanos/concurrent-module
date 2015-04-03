@@ -1,5 +1,5 @@
 <?php
-use Services\MessageQueues\Beanstalkd\BeanstalkdMessageQueue;
+use Concurrent\Services\MessageQueues\Beanstalkd\BeanstalkdMessageQueue;
 
 /**
  * @property mixed _queueMock
@@ -12,9 +12,10 @@ abstract class BeanstalkdMessageQueueTestCase extends PHPUnit_Framework_TestCase
     protected $_sut;
 
     public function setUp() {
-        $this->_queueMock = $this->getMockBuilder('\Pheanstalk_PheanstalkInterface')->disableOriginalConstructor()
+
+        $this->_queueMock = $this->getMockBuilder('Pheanstalk\PheanstalkInterface')->disableOriginalConstructor()
                             ->getMock();
-        $this->_jobMock = $this->getMockBuilder('\Pheanstalk_Job')->disableOriginalConstructor()->getMock();
+        $this->_jobMock = $this->getMockBuilder('Pheanstalk\Job')->disableOriginalConstructor()->getMock();
         $this->_sut = new BeanstalkdMessageQueue($this->_queueMock);
     }
 }
@@ -120,7 +121,7 @@ class when_getting_an_element_from_a_tube_with_timeout_and_it_fails extends Bean
      * @test
      */
     public function it_should_throw_the_proper_exception() {
-        $this->setExpectedException('\Services\MessageQueues\MessageQueueException');
+        $this->setExpectedException('Concurrent\Services\MessageQueues\MessageQueueException');
         $this->_sut->get(100, 1);
     }
 }

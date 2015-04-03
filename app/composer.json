@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-0" : {
+            "Concurrent":"./src/",
+            "Services":"./src/"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "3.7.*@dev",
+        "nategood/commando": "dev-master",
+        "mnapoli/php-di": "~4.0",
+        "psr/log": "1.0.*@dev",
+        "pda/pheanstalk": "3.0.*@dev"
+    }
+}

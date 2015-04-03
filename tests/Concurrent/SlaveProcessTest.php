@@ -1,7 +1,7 @@
 <?php
 use Concurrent\Processes\ProcessMessage;
 use Concurrent\Processes\Slave\SlaveProcess;
-use Services\MessageQueues\MessageQueueException;
+use Concurrent\Services\MessageQueues\MessageQueueException;
 
 /**
  * @property mixed _queueMock
@@ -17,9 +17,9 @@ abstract class SlaveProcessTestCase extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->_queueMock = $this->getMockBuilder('Services\MessageQueues\MessageQueueInterface')
+        $this->_queueMock = $this->getMockBuilder('Concurrent\Services\MessageQueues\MessageQueueInterface')
             ->disableOriginalConstructor()->getMock();
-        $this->_loggerMock = $this->getMockBuilder('Services\MessageLogging\LoggerInterface')
+        $this->_loggerMock = $this->getMockBuilder('Concurrent\Services\MessageLogging\LoggerInterface')
             ->disableOriginalConstructor()->getMock();
         $this->_processHandlerMock = $this->getMockBuilder('Concurrent\Commons\ProcessHandlerInterface')
             ->disableOriginalConstructor()->getMock();
